@@ -1,4 +1,4 @@
-package net.pdutta.multimoney;
+package net.pdutta.currencyexchange;
 
 public class Main {
     public static void main (String[] args) {

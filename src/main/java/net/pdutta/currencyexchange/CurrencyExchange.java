@@ -1,4 +1,4 @@
-package net.pdutta.multimoney;
+package net.pdutta.currencyexchange;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,7 +1,7 @@
 package test;
 
-import net.pdutta.multimoney.CurrencyExchange;
-import net.pdutta.multimoney.Money;
+import net.pdutta.currencyexchange.CurrencyExchange;
+import net.pdutta.currencyexchange.Money;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
