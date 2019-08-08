@@ -44,6 +44,6 @@ public class Money {
         return currencyName.name() + " " + amount;
     }
 
-    public enum CurrencyName { CAD, CHF, USD  }
+    public enum CurrencyName { CAD, CHF, SEK, USD  }
 
 }

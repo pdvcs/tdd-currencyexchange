@@ -28,6 +28,11 @@ public class CurrencyExchange {
     }
 
     public Money convert (Money amountInSourceCurrency, Money.CurrencyName targetCurrency) {
+
+        // handle same currency -> same currency conversion
+        if (amountInSourceCurrency.getCurrencyName().name().equals(targetCurrency.name()))
+            return amountInSourceCurrency;
+
         String currencyPair = amountInSourceCurrency.getCurrencyName() + "/" + targetCurrency.name();
         if (!rates.containsKey(currencyPair))
             throw new IllegalArgumentException("Conversion not offered for currency pair: " + currencyPair);

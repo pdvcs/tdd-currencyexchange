@@ -33,11 +33,16 @@ class MoneyTest {
     }
 
     @Test
-    @DisplayName("Error Conditions")
-    void errorConditions () {
+    @DisplayName("Error and Edge Conditions")
+    void errorAndEdgeConditions () {
         assertThrows(NumberFormatException.class, () -> Money.build("$12", Money.CurrencyName.CAD));
         Money usd = Money.build("12.65", Money.CurrencyName.USD);
         assertThrows(IllegalArgumentException.class, () -> cx.convert(usd, Money.CurrencyName.CAD));
+
+        // Sometimes users try to convert the same currency by mistake (fat-fingering?).
+        // We should return the amount as-is, no conversion necessary.
+        Money usdUsd = cx.convert(usd, Money.CurrencyName.USD);
+        assertEquals(usd, usdUsd);
     }
 
 }
