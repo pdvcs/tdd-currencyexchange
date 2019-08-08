@@ -33,7 +33,7 @@ public class CurrencyExchange {
         if (amountInSourceCurrency.getCurrencyName().name().equals(targetCurrency.name()))
             return amountInSourceCurrency;
 
-        String currencyPair = amountInSourceCurrency.getCurrencyName() + "/" + targetCurrency.name();
+        String currencyPair = amountInSourceCurrency.getCurrencyName() + "/" + targetCurrency;
         if (!rates.containsKey(currencyPair))
             throw new IllegalArgumentException("Conversion not offered for currency pair: " + currencyPair);
 
