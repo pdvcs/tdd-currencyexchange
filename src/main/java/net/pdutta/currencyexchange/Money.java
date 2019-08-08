@@ -1,13 +1,11 @@
 package net.pdutta.currencyexchange;
 
-import lombok.Getter;
-
 import java.math.BigDecimal;
 
 public class Money {
 
-    @Getter private BigDecimal amount;
-    @Getter private CurrencyName currencyName;
+    private BigDecimal amount;
+    private CurrencyName currencyName;
 
     public static Money build (String amountAsString, CurrencyName currencyName) {
         return Money.build(new BigDecimal(amountAsString), currencyName);
@@ -43,6 +41,16 @@ public class Money {
     public String toString () {
         return currencyName.name() + " " + amount;
     }
+
+    //region Getters
+    public BigDecimal getAmount () {
+        return this.amount;
+    }
+
+    public CurrencyName getCurrencyName () {
+        return this.currencyName;
+    }
+    //endregion
 
     public enum CurrencyName { CAD, CHF, SEK, USD  }
 
