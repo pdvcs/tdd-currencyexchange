@@ -43,6 +43,10 @@ public class CurrencyExchange {
         return Money.build(result, targetCurrency);
     }
 
+    public String getName () {
+        return name;
+    }
+
     public static class CurrencyExchangeBuilder {
         private String name;
         private ArrayList<String> fromCurrencyList, toCurrencyList;
